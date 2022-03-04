@@ -1,8 +1,6 @@
 export const Routes = () => {
 
     return (
-        <div>
-            
-        </div>
+        <div></div>
     )
 }
