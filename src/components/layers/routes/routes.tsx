@@ -3,7 +3,7 @@ import {
     Route,
 } from "react-router-dom";
 
-import {Widgets} from "..";
+import {Widgets} from "../../layout";
 import {routes} from "./list";
 
 export const Routes = () => {

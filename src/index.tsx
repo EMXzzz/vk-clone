@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Routes} from './components/layout/routes';
+import {Routes} from './components/layers/routes';
 
 import './index.css';
 
