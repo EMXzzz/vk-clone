@@ -3,9 +3,9 @@ import {Button} from "@mui/material"
 export const Home = () => {
 
     return (
-        <div>
-            Home
+        <>
+            <span>Home</span> 
             <Button variant="contained">Hello World</Button>
-        </div>
+        </>
     )
 }

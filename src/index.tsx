@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom';
 
-import {Routes} from './components/layers/routes';
+import {AuthRoute} from './layers/auth-route';
 
 import './index.css';
 
-
 ReactDOM.render(
     <React.StrictMode>
-        <Routes/>
+        <BrowserRouter>
+            <AuthRoute/>
+        </BrowserRouter>   
     </React.StrictMode>,
   document.getElementById('root')
 );
