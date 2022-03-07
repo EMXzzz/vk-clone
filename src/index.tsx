@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Layout} from './components/layout/layout';
-import {Home} from './components/pages/home/home';
+import {BrowserRouter} from 'react-router-dom';
+
+import {AuthRoute} from './layers/auth-route';
 
 import './index.css';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Layout>
-            <Home/>
-        </Layout>
+        <BrowserRouter>
+            <AuthRoute/>
+        </BrowserRouter>   
     </React.StrictMode>,
   document.getElementById('root')
 );
