@@ -1,6 +1,6 @@
 import {useHistory} from "react-router-dom";
 
-import {QuestionAnswer} from "@mui/icons-material";
+import {People} from "@mui/icons-material";
 import {
     List, 
     ListItem, 
@@ -9,23 +9,23 @@ import {
     ListItemText ,
 } from "@mui/material";
 
-import {MESSAGES} from "../../../helpers/routes";
+import {FRIENDS} from "../../../helpers/routes";
 
-export const MenuItem = () => {
+export const Friends = () => {
     const history = useHistory();
 
-    const handleMoveToMessagesPage = () => {
-        history.push(MESSAGES)
+    const handleMoveToFriendsPage = () => {
+        history.push(FRIENDS)
     }
 
     return (
         <List>
             <ListItem>
-                <ListItemButton onClick={handleMoveToMessagesPage}> 
+                <ListItemButton onClick={handleMoveToFriendsPage}> 
                     <ListItemIcon>
-                        <QuestionAnswer />
+                        <People />
                     </ListItemIcon>
-                    <ListItemText primary='Сообщения'/>
+                    <ListItemText primary='Друзья'/>
                 </ListItemButton>
             </ListItem>
         </List>

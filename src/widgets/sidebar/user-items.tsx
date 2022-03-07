@@ -1,5 +1,12 @@
-import { Avatar, Box, Card } from "@mui/material"
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom";
+
+import {
+    Avatar, 
+    Box, 
+    Card,
+} from "@mui/material";
+
+import {PROFILE} from "../../helpers/routes";
 
 export const UserItems = () => {
 
@@ -18,7 +25,7 @@ export const UserItems = () => {
                     alignItems: "center",
                 }}>
                 <Link 
-                    to={"/profile"} 
+                    to={PROFILE} 
                     style={{
                         display: 'flex', 
                         alignItems: 'center',
