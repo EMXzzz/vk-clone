@@ -1,4 +1,4 @@
-import {ChangeEvent, FormEvent, useState} from "react";
+import {ChangeEvent, KeyboardEvent, useState} from "react";
 
 import {
     Box, 
@@ -20,15 +20,19 @@ export const AddPost = ({setPosts}: AddPost) => {
 
     const [content, setContent] = useState<string>('')
 
-    const handleAddPost = () => {
-        setPosts(prev => [
-            ...prev, 
+    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => {
+
+        if (event.key === 'Enter')
+        {setPosts(prev => [ 
             {
                 author: users[0],
                 content,
                 createdAt: '5 минут назад'
-            }
+            },
+            ...prev
         ])
+        setContent('')
+        }
     }
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

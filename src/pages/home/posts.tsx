@@ -16,7 +16,7 @@ export const Posts = ({posts}: Posts) => {
 
     return (
         <>
-            {posts.map(post => 
+            {posts.map((post, index) => 
                 <Box
                     sx={{
                         border: '1px solid #E2E2E2',
@@ -24,6 +24,7 @@ export const Posts = ({posts}: Posts) => {
                         padding: 2,
                         marginTop: 5,
                     }}
+                    key={`Post${index}`}
                 >
                     <Link 
                         key={post.author._id}

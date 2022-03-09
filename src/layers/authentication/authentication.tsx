@@ -2,13 +2,9 @@ import { useEffect } from "react";
 import {
     Switch, 
     Route,
-    Redirect,
-    useLocation,
-    useHistory, 
 } from "react-router-dom";
 
-import { 
-    HOME,
+import {
     SIGN_IN, 
     SIGN_UP,
 } from "../../helpers/routes";

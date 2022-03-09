@@ -4,15 +4,22 @@ import {
 } from "react-router-dom";
 
 import {
-    FRIENDS_ID, 
+    FRIENDS,
     HOME, 
     MESSAGES, 
     MESSAGE_ID, 
+    PROFILE, 
     PROFILE_ID,
     SIGN_UP,
 } from "../../helpers/routes";
 
 import {Home} from "../../pages/home";
+import {Friends} from "../../pages/friends";
+import {
+    Conversation, 
+    Messages,
+} from "../../pages/messages";
+import {Profile} from "../../pages/profile";
 
 export const Content = () =>  (
     <Switch>
@@ -22,23 +29,23 @@ export const Content = () =>  (
         /> 
 
         <Route
-            path={PROFILE_ID}
-            component={Home}
+            path={PROFILE}
+            component={Profile}
         />
         
         <Route
             path={MESSAGES}
-            component={Home}
+            component={Messages}
         />
 
         <Route
             path={MESSAGE_ID}
-            component={Home}
+            component={Conversation}
         />
 
         <Route
-            path={FRIENDS_ID}
-            component={Home}
+            path={FRIENDS}
+            component={Friends}
         />
 
         <Route
