@@ -1,6 +1,7 @@
 import {useHistory} from "react-router-dom";
 
-import {QuestionAnswer} from "@mui/icons-material";
+import FeedIcon from '@mui/icons-material/Feed';
+
 import {
     List, 
     ListItem, 
@@ -9,23 +10,22 @@ import {
     ListItemText ,
 } from "@mui/material";
 
-import {MESSAGES} from "../../../helpers/routes";
+import {FEED} from "../../../../helpers/routes";
 
-export const MenuItem = () => {
+export const News = () => {
     const history = useHistory();
 
-    const handleMoveToMessagesPage = () => {
-        history.push(MESSAGES)
+    const handleMoveToNewsPage = () => {
+        history.push(FEED)
     }
-
     return (
         <List>
             <ListItem>
-                <ListItemButton onClick={handleMoveToMessagesPage}> 
+                <ListItemButton onClick={handleMoveToNewsPage}> 
                     <ListItemIcon>
-                        <QuestionAnswer />
+                        <FeedIcon />
                     </ListItemIcon>
-                    <ListItemText primary='Сообщения'/>
+                    <ListItemText primary='Новости'/>
                 </ListItemButton>
             </ListItem>
         </List>

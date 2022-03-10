@@ -2,15 +2,17 @@ import {
     useState, 
     SyntheticEvent, 
     ChangeEvent,
-} from "react"
+} from "react";
 
 import {
     TextField, 
     ButtonGroup, 
     Button,
-} from "@mui/material"
+} from "@mui/material";
 
-import {User} from "../../types/auth"
+import {User} from "../auth";
+
+import classes from './sign-up.module.css';
 
 export const SignUp = () => {
     const [user, setUser] = useState<User | null>(null)
@@ -36,7 +38,7 @@ export const SignUp = () => {
 
     return (
         <form 
-            className="sign-up"
+            className={classes['sign-up']}
             onSubmit={handleSumbit}
         >
             <TextField 
@@ -45,6 +47,7 @@ export const SignUp = () => {
                 variant='outlined' 
                 value={user?.email} 
                 onChange={handleChangeEmail}
+                sx={{marginBottom: 3}}
             />   
             
             <TextField 
@@ -53,6 +56,7 @@ export const SignUp = () => {
                 variant='outlined' 
                 value={user?.password} 
                 onChange={handleChangePassword}
+                sx={{marginBottom: 3}}
             />  
 
             <ButtonGroup variant="outlined">

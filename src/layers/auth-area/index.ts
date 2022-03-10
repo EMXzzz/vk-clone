@@ -1,0 +1,1 @@
+export {AuthArea} from './auth-area';

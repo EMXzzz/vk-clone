@@ -10,9 +10,9 @@ import {
     TextField,
 } from "@mui/material";
 
-import {User} from "../../types/auth";
+import {User} from "../auth";
 
-import "./styles.css"
+import classes from "./sign-in.module.css"
 
 export const SignIn = () => {
     const [user, setUser] = useState<User | null>(null)
@@ -37,18 +37,18 @@ export const SignIn = () => {
         }
     }
 
-
     return (
         <form 
-            className="sign-in"
+            className={classes["sign-in"]}
             onSubmit={handleSumbit}
         >
-            <TextField 
+            <TextField
                 type='email' 
                 label='email' 
                 variant='outlined' 
                 value={user?.email} 
                 onChange={handleChangeEmail}
+                sx={{marginBottom: 3}}
             />  
 
             <TextField 
@@ -57,11 +57,12 @@ export const SignIn = () => {
                 variant='outlined' 
                 value={user?.password} 
                 onChange={handleChangePassword}
+                sx={{marginBottom: 3}}
             />  
 
             <ButtonGroup variant="outlined">
                 <Button>One</Button>
-                <Button>Two</Button>
+                <Button>13</Button>
             </ButtonGroup>
         </form>
     )

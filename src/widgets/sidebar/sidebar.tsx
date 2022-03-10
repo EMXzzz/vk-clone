@@ -1,12 +1,20 @@
-import { MenuItem } from "./menu/menu-item"
-import { UserItems } from "./user-items"
+import {
+    Friends, 
+    Messages, 
+    News, 
+    Profile,
+} from "./components/menu";
+
+import {UserItems} from './user-items';
 
 export const Sidebar = () => {
-
     return (
         <>
             <UserItems />
-            <MenuItem />
+            <Profile />
+            <News />
+            <Messages />
+            <Friends />
         </>
     )
 }

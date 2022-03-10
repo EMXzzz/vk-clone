@@ -1,18 +1,18 @@
-import {useEffect} from "react"
+import {useEffect} from "react";
 
 import {
     useLocation,
     useHistory,
-} from "react-router-dom"
+} from "react-router-dom";
 
 import {
-    HOME,
+    FEED,
     SIGN_IN,
     SIGN_UP,
-} from "../../helpers/routes"
+} from "../../helpers/routes";
 
-import {Layout} from "../layout"
-import {Authentication} from "../authentication"
+import {Layout} from "../layout";
+import {AuthArea} from "../auth-area";
 
 export const AuthRoute = () => {
     const isAuth = true // TODO: заглушка
@@ -38,7 +38,7 @@ export const AuthRoute = () => {
             const isUrlNotAuth = location.pathname === SIGN_IN || location.pathname === SIGN_UP
 
             if (isUrlNotAuth) {
-                history.push(HOME)
+                history.push(FEED)
             }
         }
     }, [
@@ -50,6 +50,6 @@ export const AuthRoute = () => {
         return <Layout />
     }
 
-    return <Authentication />
+    return <AuthArea />
     
 }

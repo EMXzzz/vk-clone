@@ -4,46 +4,43 @@ import {
 } from "react-router-dom";
 
 import {
-    FRIENDS_ID, 
-    HOME, 
+    FRIENDS,
+    FEED, 
     MESSAGES, 
     MESSAGE_ID, 
-    PROFILE_ID,
-    SIGN_UP,
+    PROFILE,
 } from "../../helpers/routes";
 
-import {Home} from "../../pages/home";
+import {Feed} from "../../pages/feed";
+import {Friends} from "../../pages/friends";
+import {Messages} from "../../pages/messages";
+import {Profile} from "../../pages/profile";
 
 export const Content = () =>  (
     <Switch>
         <Route
-            path={HOME}
-            component={Home}
+            path={FEED}
+            component={Feed}
         /> 
 
         <Route
-            path={PROFILE_ID}
-            component={Home}
+            path={PROFILE}
+            component={Profile}
         />
         
         <Route
             path={MESSAGES}
-            component={Home}
+            component={Messages}
         />
 
         <Route
             path={MESSAGE_ID}
-            component={Home}
+            component={Messages}
         />
 
         <Route
-            path={FRIENDS_ID}
-            component={Home}
-        />
-
-        <Route
-            path={SIGN_UP}
-            component={Home}
+            path={FRIENDS}
+            component={Friends}
         />
     </Switch>
 )

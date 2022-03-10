@@ -12,19 +12,19 @@ export const Layout = () => {
             <Grid 
                 container 
                 spacing={2} 
-                marginX={5} 
-                marginTop={3}
+                paddingX={5} 
+                marginTop={2}
             >
                 <Grid 
                     item 
-                    md={2}
+                    md={3}
                 >
                     <Sidebar />
                 </Grid>
 
                 <Grid 
                     item 
-                    md={10}
+                    md={9}
                 >
                     <Content/>
                 </Grid>
