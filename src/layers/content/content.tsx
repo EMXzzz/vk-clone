@@ -5,27 +5,22 @@ import {
 
 import {
     FRIENDS,
-    HOME, 
+    FEED, 
     MESSAGES, 
     MESSAGE_ID, 
-    PROFILE, 
-    PROFILE_ID,
-    SIGN_UP,
+    PROFILE,
 } from "../../helpers/routes";
 
-import {Home} from "../../pages/home";
+import {Feed} from "../../pages/feed";
 import {Friends} from "../../pages/friends";
-import {
-    Conversation, 
-    Messages,
-} from "../../pages/messages";
+import {Messages} from "../../pages/messages";
 import {Profile} from "../../pages/profile";
 
 export const Content = () =>  (
     <Switch>
         <Route
-            path={HOME}
-            component={Home}
+            path={FEED}
+            component={Feed}
         /> 
 
         <Route
@@ -40,17 +35,12 @@ export const Content = () =>  (
 
         <Route
             path={MESSAGE_ID}
-            component={Conversation}
+            component={Messages}
         />
 
         <Route
             path={FRIENDS}
             component={Friends}
-        />
-
-        <Route
-            path={SIGN_UP}
-            component={Home}
         />
     </Switch>
 )

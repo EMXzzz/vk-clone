@@ -1,6 +1,6 @@
-export const HOME: string =  '/'
+export const FEED: string =  '/feed'
 export const PROFILE: string = '/profile'
-export const PROFILE_ID: string = '/profile/=id'
+export const PROFILE_ID: string = '/profile/:id'
 export const MESSAGES: string = '/messages'
 export const MESSAGE_ID: string = '/message/=id'
 export const FRIENDS: string = '/friends'

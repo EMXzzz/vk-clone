@@ -1,6 +1,6 @@
 import {useHistory} from "react-router-dom";
 
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import {People} from "@mui/icons-material";
 import {
     List, 
     ListItem, 
@@ -9,23 +9,22 @@ import {
     ListItemText ,
 } from "@mui/material";
 
-import {PROFILE} from "../../../helpers/routes";
+import {FRIENDS} from "../../../../helpers/routes";
 
-export const Profile = () => {
+export const Friends = () => {
     const history = useHistory();
 
-    const handleMoveToProfilePage = () => {
-        history.push(PROFILE)
+    const handleMoveToFriendsPage = () => {
+        history.push(FRIENDS)
     }
-
     return (
         <List>
             <ListItem>
-                <ListItemButton onClick={handleMoveToProfilePage}> 
+                <ListItemButton onClick={handleMoveToFriendsPage}> 
                     <ListItemIcon>
-                        <AccountBoxIcon />
+                        <People />
                     </ListItemIcon>
-                    <ListItemText primary='Моя страница'/>
+                    <ListItemText primary='Друзья'/>
                 </ListItemButton>
             </ListItem>
         </List>

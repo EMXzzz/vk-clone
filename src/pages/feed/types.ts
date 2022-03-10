@@ -1,8 +1,4 @@
-import { Dispatch, SetStateAction } from "react"
-
-export type TypeSetState<T> = Dispatch<SetStateAction<T>>
-
-export interface User {
+interface Author {
     _id: string
     avatar: string
     name: string
@@ -10,7 +6,7 @@ export interface User {
 }
 
 export interface Post {
-    author: User
+    author: Author
     createdAt: string
     content: string
     images?: string[]

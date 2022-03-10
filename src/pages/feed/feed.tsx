@@ -1,13 +1,17 @@
-import { Post } from "../../types/post";
+import {Box} from "@mui/material";
+import {useState} from "react";
+import {Post} from "./types";
+import {AddPost} from "./components/add-post/add-post";
+import {Posts} from "./components/posts/posts";
 
-export const initialPost: Post[] = [
+const initialPost: Post[] = [ //TODO MOCK
     {
         author: {
             _id: '45',
             avatar: 'https://i.pinimg.com/736x/6f/70/77/6f7077ec9c6ae134992954976c456cec.jpg',
             name: 'Феечка Винкс',
         },
-        content: 'Ya ebal menya sosali',
+        content: 'bla bla bla',
         createdAt: '5 минут назад',
         images: [
             'https://daily-med.com.ua/wp-content/uploads/2021/09/37e331b7a1b39f090b1249a069a513d3_xl.jpg',
@@ -19,3 +23,17 @@ export const initialPost: Post[] = [
     }
 ]
 
+export const Feed = () => {
+    const [posts, setPosts] = useState<Post[]>(initialPost)
+    
+    const handleAddPost = (post: Post) => {
+        setPosts([...posts, post])
+    }
+
+    return (
+        <Box>
+            <AddPost onAdd={handleAddPost}/>
+            <Posts posts={posts}/>
+        </Box>
+    )
+}
