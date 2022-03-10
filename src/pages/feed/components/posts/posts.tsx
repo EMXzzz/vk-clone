@@ -30,7 +30,7 @@ export const Posts = ({posts}: Props) => {
                         key={post.author._id}
                         to={`${PROFILE}/${post.author._id}`} 
                     >
-                        <Box className={classes['post-box']}>
+                        <Box className={classes['post-avatar-container']}>
                             <Avatar 
                                 className={classes['post-avatar']}
                                 src={post.author.avatar}

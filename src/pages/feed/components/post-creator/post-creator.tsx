@@ -22,9 +22,9 @@ interface Props {
 export const PostCreator = ({onAdd}: Props) => {
     const [content, setContent] = useState<string>('')
 
-    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { //TODO заглушка
+    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { 
         if (event.key === 'Enter') {
-            const post = {
+            const post = { //TODO заглушка
                 author: users[0],
                 content,
                 createdAt: '5 минут назад'
@@ -40,9 +40,9 @@ export const PostCreator = ({onAdd}: Props) => {
     }
 
     return (
-        <Box className={classes['post-creator']} >
+        <Box className={classes['post-creator-container']} >
             <TextField 
-                className={classes['input-post']}
+                className={classes['post-creator']}
                 label="Расскажи что у тебя нового" 
                 variant="outlined"
                 onKeyPress={handleAddPost}
