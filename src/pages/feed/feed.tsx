@@ -1,5 +1,7 @@
-import {Box} from "@mui/material";
 import {useState} from "react";
+
+import {Box} from "@mui/material";
+
 import {Post} from "./types";
 import {PostCreator} from "./components/post-creator";
 import {Posts} from "./components/posts";

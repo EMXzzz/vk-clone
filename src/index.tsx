@@ -4,6 +4,8 @@ import {BrowserRouter} from 'react-router-dom';
 
 import {AuthRoute} from './layers/auth-route';
 
+import './firebase-init-app';
+
 import './index.css';
 
 ReactDOM.render(
