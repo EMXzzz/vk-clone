@@ -15,7 +15,7 @@ import {Layout} from "../layout";
 import {AuthArea} from "../auth-area";
 
 export const AuthRoute = () => {
-    const isAuth = true // TODO: заглушка
+    const isAuth = false // TODO: заглушка
     
     const location = useLocation();
     const history = useHistory();

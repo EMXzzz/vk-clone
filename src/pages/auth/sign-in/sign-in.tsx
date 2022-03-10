@@ -61,8 +61,7 @@ export const SignIn = () => {
             />  
 
             <ButtonGroup variant="outlined">
-                <Button>One</Button>
-                <Button>13</Button>
+                <Button>Login</Button>
             </ButtonGroup>
         </form>
     )

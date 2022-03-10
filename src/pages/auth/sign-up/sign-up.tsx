@@ -17,11 +17,9 @@ import classes from './sign-up.module.css';
 export const SignUp = () => {
     const [user, setUser] = useState<User | null>(null)
 
-    const handleSumbit = (event: SyntheticEvent<HTMLFormElement>) => {
+    const handleSumbit = async (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if (user) {
-            console.log(user.email, user.password);
-        }
+        console.log(user?.email, user?.password)
     }
 
     const handleChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {

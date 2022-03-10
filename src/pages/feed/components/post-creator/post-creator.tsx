@@ -21,7 +21,6 @@ interface Props {
 
 export const PostCreator = ({onAdd}: Props) => {
     const [content, setContent] = useState<string>('')
-
     const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { 
         if (event.key === 'Enter') {
             const post = { //TODO заглушка
