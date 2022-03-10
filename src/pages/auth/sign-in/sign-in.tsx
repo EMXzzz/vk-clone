@@ -10,7 +10,7 @@ import {
     TextField,
 } from "@mui/material";
 
-import {useLoginUser} from "./use-login-user";
+import {useSignInUser} from "./use-sign-in-user";
 
 import {User} from "../auth";
 
@@ -24,12 +24,12 @@ export const SignIn = () => {
 
     const [user, setUser] = useState<User>(defaultUserData)
 
-    const {loginUser} = useLoginUser()
+    const {signInUser} = useSignInUser()
 
     const handleSumbit = (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        void loginUser(user.email, user.password)
+        void signInUser(user.email, user.password)
 
         setUser(defaultUserData)
     }

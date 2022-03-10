@@ -3,8 +3,8 @@ import {
     signInWithEmailAndPassword,
 } from "firebase/auth";
 
-export const useLoginUser = () => {
-    const loginUser = async (email: string, password: string) => {
+export const useSignInUser = () => {
+    const signInUser = async (email: string, password: string) => {
         try {
             const auth = getAuth()
 
@@ -19,6 +19,6 @@ export const useLoginUser = () => {
     }
 
     return {
-        loginUser
+        signInUser
     }
 }
