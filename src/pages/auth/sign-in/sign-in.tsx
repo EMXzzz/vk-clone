@@ -10,31 +10,36 @@ import {
     TextField,
 } from "@mui/material";
 
+import {useLoginUser} from "./use-login-user";
+
 import {User} from "../auth";
 
-import classes from "./sign-in.module.css"
+import classes from "./sign-in.module.css";
 
 export const SignIn = () => {
-    const [user, setUser] = useState<User | null>(null)
+    const defaultUserData = {
+        email: '',
+        password: '',
+    }
+
+    const [user, setUser] = useState<User>(defaultUserData)
+
+    const {loginUser} = useLoginUser()
 
     const handleSumbit = (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        if (user) {
-            console.log(user.email, user.password);
-        }
+        void loginUser(user.email, user.password)
+
+        setUser(defaultUserData)
     }
 
     const handleChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
-        if (user) {
-            setUser({...user, email: event.target.value})
-        }
+        setUser({...user, email: event.target.value})
     }
 
     const handleChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
-        if (user) {
-            setUser({...user, password: event.target.value})
-        }
+        setUser({...user, password: event.target.value})
     }
 
     return (
@@ -46,7 +51,7 @@ export const SignIn = () => {
                 type='email' 
                 label='email' 
                 variant='outlined' 
-                value={user?.email} 
+                value={user.email} 
                 onChange={handleChangeEmail}
                 sx={{marginBottom: 3}}
             />  
@@ -55,13 +60,18 @@ export const SignIn = () => {
                 type='password' 
                 label='password' 
                 variant='outlined' 
-                value={user?.password} 
+                value={user.password} 
                 onChange={handleChangePassword}
                 sx={{marginBottom: 3}}
             />  
 
             <ButtonGroup variant="outlined">
-                <Button>Login</Button>
+                <Button 
+                    type="submit" 
+                    disabled={!user.email && !user.password}
+                >
+                    Login
+                </Button>
             </ButtonGroup>
         </form>
     )
