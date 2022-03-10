@@ -1,8 +1,8 @@
 import {Box} from "@mui/material";
 import {useState} from "react";
 import {Post} from "./types";
-import {AddPost} from "./components/add-post/add-post";
-import {Posts} from "./components/posts/posts";
+import {PostCreator} from "./components/post-creator";
+import {Posts} from "./components/posts";
 
 const initialPost: Post[] = [ //TODO MOCK
     {
@@ -32,7 +32,7 @@ export const Feed = () => {
 
     return (
         <Box>
-            <AddPost onAdd={handleAddPost}/>
+            <PostCreator onAdd={handleAddPost}/>
             <Posts posts={posts}/>
         </Box>
     )

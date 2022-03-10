@@ -5,7 +5,7 @@
     border-radius: 3px;
 }
 
-.user-id {
+.user-link {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -13,7 +13,7 @@
     margin-bottom: 12px;
 }
 
-.user-box {
+.user-avatar-container {
     position: relative;
     margin-right: 2px;
     border-radius: 50%;

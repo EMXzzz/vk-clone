@@ -8,6 +8,8 @@ import {
 
 import classes from './sidebar.module.css';
 
+import {PROFILE} from "../../helpers/routes";
+
 export const users: any[] = [ //TODO MOCK
     {
         avatar: 'https://penzavzglyad.ru/images/uploads/2021/03/11/88db2b6320f164d39b27d80aac3b6551.jpg',
@@ -37,11 +39,11 @@ export const UserItems = () => {
         >
             {users.map(user => 
                 <Link 
-                    className={classes['user-id']}
+                    className={classes['user-link']}
                     key={user._id}
-                    to={`profile_id${user._id}`} 
+                    to={`${PROFILE}/${user._id}`} 
                 >
-                    <Box className={classes['user-box']}>
+                    <Box className={classes['user-avatar-container']}>
                         <Avatar 
                             className={classes['user-avatar']}
                             src={user.avatar}

@@ -9,7 +9,7 @@ import {
     TextField,
 } from "@mui/material";
 
-import classes from './add-post.module.css'
+import classes from './post-creator.module.css'
 
 import {users} from "../../../../widgets/sidebar/user-items";
 
@@ -19,10 +19,10 @@ interface Props {
     onAdd: (post: Post) => void
 }
 
-export const AddPost = ({onAdd}: Props) => {
+export const PostCreator = ({onAdd}: Props) => {
     const [content, setContent] = useState<string>('')
 
-    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => {
+    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { //TODO заглушка
         if (event.key === 'Enter') {
             const post = {
                 author: users[0],
@@ -40,7 +40,7 @@ export const AddPost = ({onAdd}: Props) => {
     }
 
     return (
-        <Box className={classes['add-post']} >
+        <Box className={classes['post-creator']} >
             <TextField 
                 className={classes['input-post']}
                 label="Расскажи что у тебя нового" 

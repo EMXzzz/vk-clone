@@ -12,6 +12,7 @@ import {
 import {PROFILE} from "../../../../helpers/routes";
 
 export const Profile = () => {
+    
     const history = useHistory();
 
     const handleMoveToProfilePage = () => {

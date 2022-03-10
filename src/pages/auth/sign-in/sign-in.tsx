@@ -7,7 +7,6 @@ import {
 import {
     Button, 
     ButtonGroup, 
-    Grid, 
     TextField,
 } from "@mui/material";
 
@@ -39,38 +38,32 @@ export const SignIn = () => {
     }
 
     return (
-        <Grid 
-            display='flex' 
-            justifyContent='center' 
-            alignItems='center'
+        <form 
+            className={classes["sign-in"]}
+            onSubmit={handleSumbit}
         >
-            <form 
-                className={classes["sign-in"]}
-                onSubmit={handleSumbit}
-            >
-                <TextField
-                    type='email' 
-                    label='email' 
-                    variant='outlined' 
-                    value={user?.email} 
-                    onChange={handleChangeEmail}
-                    sx={{display: 'block', marginBottom: 3}}
-                />  
+            <TextField
+                type='email' 
+                label='email' 
+                variant='outlined' 
+                value={user?.email} 
+                onChange={handleChangeEmail}
+                sx={{marginBottom: 3}}
+            />  
 
-                <TextField 
-                    type='password' 
-                    label='password' 
-                    variant='outlined' 
-                    value={user?.password} 
-                    onChange={handleChangePassword}
-                    sx={{display: 'block', marginBottom: 3}}
-                />  
+            <TextField 
+                type='password' 
+                label='password' 
+                variant='outlined' 
+                value={user?.password} 
+                onChange={handleChangePassword}
+                sx={{marginBottom: 3}}
+            />  
 
-                <ButtonGroup variant="outlined">
-                    <Button>One</Button>
-                    <Button>13</Button>
-                </ButtonGroup>
-            </form>
-        </Grid>
+            <ButtonGroup variant="outlined">
+                <Button>One</Button>
+                <Button>13</Button>
+            </ButtonGroup>
+        </form>
     )
 }

@@ -8,7 +8,6 @@ import {
     TextField, 
     ButtonGroup, 
     Button,
-    Grid,
 } from "@mui/material";
 
 import {User} from "../auth";
@@ -38,37 +37,31 @@ export const SignUp = () => {
     }
 
     return (
-        <Grid 
-            display='flex' 
-            justifyContent='center' 
-            alignItems='center'
+        <form 
+            className={classes['sign-up']}
+            onSubmit={handleSumbit}
         >
-            <form 
-                className={classes['sign-up']}
-                onSubmit={handleSumbit}
-            >
-                <TextField 
-                    type='email' 
-                    label='email' 
-                    variant='outlined' 
-                    value={user?.email} 
-                    onChange={handleChangeEmail}
-                    sx={{display: 'block', marginBottom: 3}}
-                />   
-                
-                <TextField 
-                    type='password' 
-                    label='password' 
-                    variant='outlined' 
-                    value={user?.password} 
-                    onChange={handleChangePassword}
-                    sx={{display: 'block', marginBottom: 3}}
-                />  
+            <TextField 
+                type='email' 
+                label='email' 
+                variant='outlined' 
+                value={user?.email} 
+                onChange={handleChangeEmail}
+                sx={{marginBottom: 3}}
+            />   
+            
+            <TextField 
+                type='password' 
+                label='password' 
+                variant='outlined' 
+                value={user?.password} 
+                onChange={handleChangePassword}
+                sx={{marginBottom: 3}}
+            />  
 
-                <ButtonGroup variant="outlined">
-                    <Button>Registration</Button>
-                </ButtonGroup>
-            </form> 
-        </Grid> 
+            <ButtonGroup variant="outlined">
+                <Button>Registration</Button>
+            </ButtonGroup>
+        </form>  
     )
 }
