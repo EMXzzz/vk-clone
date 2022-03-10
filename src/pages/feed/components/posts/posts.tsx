@@ -52,15 +52,15 @@ export const Posts = ({posts}: Props) => {
                     </Link>
 
                     <p>{post.content}</p>
-
-                    {(post.images && 0 < post?.images?.length) && (
+                
+                    {post.images && 0 < post.images.length && (
                         <ImageList 
                             variant="masonry" 
                             cols={3} 
                             gap={8}
                         >
-                            {post.images.map(image => (
-                                <ImageListItem key={image}>
+                            {post.images.map((image, idx) => (
+                                <ImageListItem key={idx}>
                                     <img
                                         src={image}
                                         loading="lazy"
