@@ -18,6 +18,7 @@ import classes from "./sign-in.module.css";
 
 export const SignIn = () => {
     const defaultUserData = {
+        name: '',
         email: '',
         password: '',
     }

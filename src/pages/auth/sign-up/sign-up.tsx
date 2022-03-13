@@ -18,6 +18,7 @@ import classes from './sign-up.module.css';
 
 export const SignUp = () => {
     const defaultUserData = {
+        name: '',
         email: '',
         password: '',
     }
@@ -29,9 +30,13 @@ export const SignUp = () => {
     const handleSumbit = async (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        void createUser(user.email, user.password)
+        void createUser(user.name, user.email, user.password)
 
         setUser(defaultUserData)
+    }
+
+    const handleChangeName = (event: ChangeEvent<HTMLInputElement>) => {
+        setUser({...user, name: event.target.value})
     }
     
     const handleChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
@@ -47,6 +52,15 @@ export const SignUp = () => {
             className={classes['sign-up']}
             onSubmit={handleSumbit}
         >
+            <TextField 
+                type='text' 
+                label='Name & Lastname' 
+                variant='outlined' 
+                value={user.name} 
+                onChange={handleChangeName}
+                sx={{marginBottom: 3}}
+            /> 
+
             <TextField 
                 type='email' 
                 label='email' 

@@ -9,11 +9,11 @@ import {
     TextField,
 } from "@mui/material";
 
-import classes from './post-creator.module.css'
-
-import {users} from "../../../../widgets/sidebar/user-items";
+import classes from './post-creator.module.css';
 
 import {Post} from "../../types";
+
+import {useAuth} from "../../../../layers/auth-provider/use-auth";
 
 interface Props {
     onAdd: (post: Post) => void
@@ -21,10 +21,11 @@ interface Props {
 
 export const PostCreator = ({onAdd}: Props) => {
     const [content, setContent] = useState<string>('')
+    const {user} = useAuth()
     const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { 
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && user) {
             const post = { //TODO заглушка
-                author: users[0],
+                author: user,
                 content,
                 createdAt: '5 минут назад'
             }
