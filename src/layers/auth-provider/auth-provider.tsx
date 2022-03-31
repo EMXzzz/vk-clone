@@ -1,8 +1,6 @@
 import {
-    createContext, 
-    useCallback, 
+    createContext,
     useEffect, 
-    useMemo, 
     useState,
 } from "react";
 
@@ -11,7 +9,10 @@ import {
     getAuth, 
     onAuthStateChanged,
 } from "firebase/auth";
-import {getFirestore} from "firebase/firestore"
+import {
+    Firestore, 
+    getFirestore,
+} from "firebase/firestore";
 
 import {
     Author, 
@@ -24,12 +25,14 @@ interface Context {
     user: Author | null
     setUser: TypeSetState<Author | null>
     auth: Auth | null
+    db: Firestore | null
 }
 
 export const AuthContext = createContext<Context>({
     user: null,
     setUser: (value) => null,
-    auth: null
+    auth: null,
+    db: null
 })
 
 interface Props {

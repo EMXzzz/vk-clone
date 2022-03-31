@@ -27,7 +27,7 @@ export const Content = () =>  (
             path={PROFILE}
             component={Profile}
         />
-        
+
         <Route
             path={MESSAGES}
             component={Messages}

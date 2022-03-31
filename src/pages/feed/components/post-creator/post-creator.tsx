@@ -11,26 +11,30 @@ import {
 
 import classes from './post-creator.module.css';
 
-import {Post} from "../../types";
-
 import {useAuth} from "../../../../layers/auth-provider/use-auth";
+import {
+    addDoc, 
+    collection,
+} from "firebase/firestore";
 
-interface Props {
-    onAdd: (post: Post) => void
-}
-
-export const PostCreator = ({onAdd}: Props) => {
+export const PostCreator = () => {
     const [content, setContent] = useState<string>('')
-    const {user} = useAuth()
-    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { 
+    const {user, db} = useAuth()
+    const handleAddPost = async (event: KeyboardEvent<HTMLInputElement>) => { 
         if (event.key === 'Enter' && user) {
-            const post = { //TODO заглушка
-                author: user,
-                content,
-                createdAt: '5 минут назад'
+            
+            try {
+                if (db) {
+                    await addDoc(collection(db, 'posts'), {
+                        author: user,
+                        content,
+                        createdAt: '5 минут назад',
+                   })
+                }
+            } catch (error) {
+                console.log(error); 
             }
-
-            onAdd(post)
+            
             setContent('')
         }
     }
