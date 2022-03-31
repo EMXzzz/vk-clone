@@ -13,15 +13,16 @@ import {
 
 import {Layout} from "../layout";
 import {AuthArea} from "../auth-area";
+import { useAuth } from "../auth-provider/use-auth";
 
 export const AuthRoute = () => {
-    const isAuth = false // TODO: заглушка
+    const {user} = useAuth()
     
     const location = useLocation();
     const history = useHistory();
 
     useEffect(() => {
-        if (!isAuth) {
+        if (!user) {
             const isUrlAuth = location.pathname !== SIGN_IN && location.pathname !== SIGN_UP
 
             if (isUrlAuth) {
@@ -30,11 +31,11 @@ export const AuthRoute = () => {
         }
     }, [
         location.pathname,
-        isAuth,
+        user,
     ])
 
     useEffect(() => {
-        if (isAuth) {
+        if (user) {
             const isUrlNotAuth = location.pathname === SIGN_IN || location.pathname === SIGN_UP
 
             if (isUrlNotAuth) {
@@ -43,10 +44,10 @@ export const AuthRoute = () => {
         }
     }, [
         location.pathname,
-        isAuth,
+        user,
     ])
     
-    if(isAuth) {
+    if (user) {
         return <Layout />
     }
 

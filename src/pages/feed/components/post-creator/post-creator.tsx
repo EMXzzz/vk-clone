@@ -9,27 +9,32 @@ import {
     TextField,
 } from "@mui/material";
 
-import classes from './post-creator.module.css'
+import classes from './post-creator.module.css';
 
-import {users} from "../../../../widgets/sidebar/user-items";
+import {useAuth} from "../../../../layers/auth-provider/use-auth";
+import {
+    addDoc, 
+    collection,
+} from "firebase/firestore";
 
-import {Post} from "../../types";
-
-interface Props {
-    onAdd: (post: Post) => void
-}
-
-export const PostCreator = ({onAdd}: Props) => {
+export const PostCreator = () => {
     const [content, setContent] = useState<string>('')
-    const handleAddPost = (event: KeyboardEvent<HTMLInputElement>) => { 
-        if (event.key === 'Enter') {
-            const post = { //TODO заглушка
-                author: users[0],
-                content,
-                createdAt: '5 минут назад'
+    const {user, db} = useAuth()
+    const handleAddPost = async (event: KeyboardEvent<HTMLInputElement>) => { 
+        if (event.key === 'Enter' && user) {
+            
+            try {
+                if (db) {
+                    await addDoc(collection(db, 'posts'), {
+                        author: user,
+                        content,
+                        createdAt: '5 минут назад',
+                   })
+                }
+            } catch (error) {
+                console.log(error); 
             }
-
-            onAdd(post)
+            
             setContent('')
         }
     }
